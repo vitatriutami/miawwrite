@@ -1,28 +1,29 @@
 const API_ENDPOINT = "https://v1.appbackend.io/v1/rows/WcM1zBK4jOm4";
 const searchInput = document.getElementById("searchInput");
-const digimonContainer = document.getElementById("digimonContainer");
+const noteContainer = document.getElementById("noteContainer");
 
-let dataDigimons = [];
+let dataNotes = [];
 
 searchInput.addEventListener("keyup", () => {
   const searchValue = searchInput.value;
-  digimonContainer.innerHTML = "";
+  noteContainer.innerHTML = "";
 
-  const filteredDigimons = dataDigimons.filter((digimon) =>
-    digimon.name.toLowerCase().includes(searchValue.toLowerCase())
+  const filteredNotes = dataNotes.filter((note) =>
+    note.title.toLowerCase().includes(searchValue.toLowerCase())
   );
 
-  filteredDigimons.forEach((digimon) => {
-    const digimonCard = document.createElement("div");
-    const digimonName = document.createElement("h3");
-    const digimonImg = document.createElement("img");
+  filteredNotes.forEach((note) => {
+    const noteCard = document.createElement("div");
+    const noteTitle = document.createElement("h3");
+    const noteContent = document.createElement("p");
 
-    digimonName.textContent = digimon.name;
-    digimonImg.src = digimon.img;
-    digimonCard.classList.add("digimonCard");
+    noteTitle.textContent = note.title;
+    noteContent.textContent = note.content;
 
-    digimonCard.append(digimonName, digimonImg);
-    digimonContainer.append(digimonCard);
+    noteCard.classList.add("digimonCard");
+
+    noteCard.append(noteTitle, noteContent);
+    noteContainer.append(noteCard);
   });
 });
 
@@ -33,20 +34,22 @@ async function getDigimons() {
 }
 
 async function buildApp() {
-  const digimons = await getDigimons();
-  dataDigimons = digimons;
+  const notes = await getDigimons();
+  dataNotes = notes;
 
-  digimons.forEach((digimon) => {
-    const digimonCard = document.createElement("div");
-    const digimonName = document.createElement("h3");
-    const digimonImg = document.createElement("img");
+  notes.forEach((note) => {
+    const noteCard = document.createElement("div");
+    const noteTitle = document.createElement("h3");
+    const noteContent = document.createElement("p");
 
-    digimonName.textContent = digimon.name;
-    digimonImg.src = digimon.img;
+    noteTitle.textContent = note.title;
+    noteContent.textContent = note.content;
     digimonCard.classList.add("digimonCard");
 
-    digimonCard.append(digimonName, digimonImg);
-    digimonContainer.append(digimonCard);
+    noteCard.classList.add("digimonCard");
+
+    noteCard.append(noteTitle, noteContent);
+    noteContainer.append(noteCard);
   });
 }
 
