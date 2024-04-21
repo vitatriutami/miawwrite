@@ -4,90 +4,239 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Memourite</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <title>Dashboard</title>
 </head>
 
-<body>
-  <main class="w-full p-6">
-    <nav class="flex justify-between items-center">
-      <h1>Memourite</h1>
-      <input id="searchInput" placeholder="Search Notes" class="border border-slate-500 p-2 rounded-lg w-[250px]" />
-      <div class="flex items-center gap-2">
-        <h1>Username</h1>
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 14 14">
-          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            d="M13.5 2H.5m13 5H.5m13 5H.5" />
-        </svg>
-      </div>
-    </nav>
-    <div class="">
-      <div class="w-[900px] m-auto my-12 bg-blue-100 p-4 border rounded-lg">
-        <h1
-          class="font-bold text-3xl mt-10 text-red-500">
-          My Notes</h1>
-        <p>Your daily memorable idea. Keep your memories by write it here!</p>
-        <div id="noteContainer" class="grid grid-cols-3 gap-10 border border-red-200 border-2 p-10 mt-5">
-          <div class="border border-red-200 border-2 p-2 ">
-            <!-- <div class="absolute grid grid-cols-1 top-0 right-0 mx-1 mt-1">
-              <svg class="" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
-                <path fill="currentColor" fill-rule="evenodd"
-                  d="M3 5a3 3 0 0 1 3-3h8a7 7 0 0 1 7 7v10a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3zm10-1H6a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9h-6zm5.584 3A5.009 5.009 0 0 0 15 4.1V7z"
-                  clip-rule="evenodd" />
-              </svg>
-              <svg class="" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
-                <path fill="currentColor" fill-rule="evenodd"
-                  d="M3 5a3 3 0 0 1 3-3h8a7 7 0 0 1 7 7v10a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3zm10-1H6a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9h-6zm5.584 3A5.009 5.009 0 0 0 15 4.1V7z"
-                  clip-rule="evenodd" />
-              </svg>
-            </div> -->
-            <p class="text-xs">13/04/2024</p>
-            <div class="grid grid-cols-1 divide-y divide-gray-400 ">
-              <div class="flex justify-between items-end">
-                <h1 class="font-bold mt-3">Violin Lesson 1</h1>
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="-5 3 28 24">
-                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
-                    d="M10 4H7.2c-1.12 0-1.68 0-2.108.218a1.999 1.999 0 0 0-.874.874C4 5.52 4 6.08 4 7.2v9.6c0 1.12 0 1.68.218 2.108a2 2 0 0 0 .874.874c.427.218.987.218 2.105.218h9.606c1.118 0 1.677 0 2.104-.218c.377-.192.683-.498.875-.874c.218-.428.218-.987.218-2.105V14m-4-9l-6 6v3h3l6-6m-3-3l3-3l3 3l-3 3m-3-3l3 3" />
-                </svg>
-              </div>
-              <h1>Hello</h1>
-            </div>
-            <button class="mt-4 border bg-yellow-100 px-1">More</button>
-          </div>
-          <div class="border border-red-200 border-2 p-2 ">
-            <!-- <div class="absolute grid grid-cols-1 top-0 right-0 mx-1 mt-1">
-                        <svg class="" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
-                          <path fill="currentColor" fill-rule="evenodd"
-                            d="M3 5a3 3 0 0 1 3-3h8a7 7 0 0 1 7 7v10a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3zm10-1H6a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9h-6zm5.584 3A5.009 5.009 0 0 0 15 4.1V7z"
-                            clip-rule="evenodd" />
-                        </svg>
-                        <svg class="" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
-                          <path fill="currentColor" fill-rule="evenodd"
-                            d="M3 5a3 3 0 0 1 3-3h8a7 7 0 0 1 7 7v10a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3zm10-1H6a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9h-6zm5.584 3A5.009 5.009 0 0 0 15 4.1V7z"
-                            clip-rule="evenodd" />
-                        </svg>
-                      </div> -->
-            <p class="text-xs">13/04/2024</p>
-            <div class="grid grid-cols-1 divide-y divide-gray-400 ">
-              <div class="flex justify-between items-end">
-                <h1 class="font-bold mt-3">Violin Lesson 1</h1>
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="-5 3 28 24">
-                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
-                    d="M10 4H7.2c-1.12 0-1.68 0-2.108.218a1.999 1.999 0 0 0-.874.874C4 5.52 4 6.08 4 7.2v9.6c0 1.12 0 1.68.218 2.108a2 2 0 0 0 .874.874c.427.218.987.218 2.105.218h9.606c1.118 0 1.677 0 2.104-.218c.377-.192.683-.498.875-.874c.218-.428.218-.987.218-2.105V14m-4-9l-6 6v3h3l6-6m-3-3l3-3l3 3l-3 3m-3-3l3 3" />
-                </svg>
-              </div>
-              <h1>Hello</h1>
-            </div>
-            <button class="mt-4 border bg-yellow-100 px-1">More</button>
-          </div>
-          <h1>Hello</h1>
-          <h1>Hello</h1>
-          <h1>Hello</h1>
-        </div>
-    </div>
+<body class="text-gray-800 font-inter">
+
+  <!-- start: Sidebar -->
+  <div class="fixed left-0 top-0 w-64 h-full bg-gray-900 p-4 z-50 sidebar-menu transition-transform">
+    <a href="#" class="flex items-center pb-4 border-b border-b-gray-800">
+      <img src="./logo-main.png" class="w-57 h-13" alt="">
+    </a>
+    <ul class="mt-4">
+      <li class="mb-1 group active">
+        <a href="#"
+          class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
+          <i class="ri-home-2-line mr-3 text-lg"></i>
+          <span class="text-sm">Dashboard</span>
+        </a>
+      </li>
+      <li class="mb-1 group">
+        <a href="#"
+          class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle">
+          <i class="ri-instance-line mr-3 text-lg"></i>
+          <span class="text-sm">Category</span>
+          <i class="ri-arrow-right-s-line ml-auto group-[.selected]:rotate-90"></i>
+        </a>
+        <ul class="pl-7 mt-2 hidden group-[.selected]:block">
+          <li class="mb-4">
+            <a href="#"
+              class="text-gray-300 text-sm flex items-center hover:text-gray-100 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Active
+              order</a>
+          </li>
+          <li class="mb-4">
+            <a href="#"
+              class="text-gray-300 text-sm flex items-center hover:text-gray-100 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Completed
+              order</a>
+          </li>
+          <li class="mb-4">
+            <a href="#"
+              class="text-gray-300 text-sm flex items-center hover:text-gray-100 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Canceled
+              order</a>
+          </li>
+        </ul>
+      </li>
+      <li class="mb-1 group">
+        <a href="#"
+          class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
+          <i class="ri-settings-2-line mr-3 text-lg"></i>
+          <span class="text-sm">Settings</span>
+        </a>
+      </li>
+    </ul>
   </div>
-  <script src="main.js"></script>
-</main>
+  <div class="fixed top-0 left-0 w-full h-full bg-black/50 z-40 md:hidden sidebar-overlay"></div>
+  <!-- end: Sidebar -->
+
+  <!-- start: Main -->
+  <main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-gray-50 min-h-screen transition-all main">
+    <div class="py-7 px-6 bg-white flex items-center shadow-md shadow-black/5 sticky top-0 left-0 z-30">
+      <button type="button" class="text-lg text-gray-600 sidebar-toggle">
+        <i class="ri-menu-line"></i>
+      </button>
+      <ul class="flex items-center text-sm ml-4">
+        <li class="mr-2">
+          <a href="#" class="text-gray-400 hover:text-gray-600 font-medium">Dashboard</a>
+        </li>
+      </ul>
+      <ul class="ml-auto flex items-center">
+        <li class="mr-1 dropdown">
+          <input id="searchInput" placeholder="Search Notes"
+            class="text-sm border border-black-300 p-3 rounded-full w-[250px]" />
+        </li>
+      </ul>
+    </div>
+
+    <!-- CONTENT -->
+
+    <div class="p-14">
+      <!-- SUB CONTENT -->
+
+      <section class="">
+        <h1 class="text-xl text-orange-500 font-medium mb-5">Memorable Note. Keep your memory by writing it here</h1>
+        <form id="form" class="space-y-2 mb-6 w-[300px]" action="">
+          <input name="title" placeholder="Title" class="border p-2 rounded-lg block w-full" type="text" />
+          <textarea name="content" placeholder="Your note" class="border p-2 rounded-lg block w-full"></textarea>
+          <input name="date" type="date" class="border p-2 rounded-lg block w-full" />
+          <button class="bg-indigo-500 texxt-white font-medium p-2 rounded-lg">Make a note</button>
+        </form>
+      </section>
+      <section class="p-4 border border-transparent rounded-lg">
+        <div class="flex flex-col ">
+          <div class="flex justify-between items-center">
+            <div class="flex gap-2">
+              <h1 class="border border-transparent hover:border-blue-300 hover:bg-blue-300 px-3 py-2 rounded-md">All
+              </h1>
+              <h1 class="border border-transparent hover:border-blue-300 hover:bg-blue-300 px-3 py-2 rounded-md">Project
+              </h1>
+              <h1 class="border border-transparent hover:border-blue-300 hover:bg-blue-300 px-3 py-2 rounded-md">
+                Business
+              </h1>
+              <h1 class="border border-transparent hover:border-blue-300 hover:bg-blue-300 px-3 py-2 rounded-md">
+                Personal
+              </h1>
+            </div>
+            <button class="bg-blue-200 py-3 px-5 rounded text-gray-600 shadow-md">Add a new note</button>
+          </div>
+        </div>
+        <div id="noteCard" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 p-8"></div>
+
+      </section>
+
+    </div>
+
+
+
+    <!-- CARD -->
+    <!-- <div class="p-6">
+      // card semua -->
+    <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+        card
+        <div class="bg-white rounded-md border border-gray-100 p-6 shadow-md shadow-black/5">
+          <div class="flex justify-between mb-6">
+            <div>
+              <div class="text-2xl font-semibold mb-1">10</div>
+              <div class="text-sm font-medium text-gray-400">Active orders</div>
+            </div>
+            <div class="dropdown">
+              <button type="button" class="dropdown-toggle text-gray-400 hover:text-gray-600"><i
+                  class="ri-more-fill"></i></button>
+              <ul
+                class="dropdown-menu shadow-md shadow-black/5 z-30 hidden py-1.5 rounded-md bg-white border border-gray-100 w-full max-w-[140px]">
+                <li>
+                  <a href="#"
+                    class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50">Profile</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50">Settings</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <div class="w-full bg-gray-100 rounded-full h-4">
+              <div class="h-full bg-blue-500 rounded-full p-1" style="width: 60%;">
+                <div class="w-2 h-2 rounded-full bg-white ml-auto"></div>
+              </div>
+            </div>
+            <span class="text-sm font-medium text-gray-600 ml-4">60%</span>
+          </div>
+        </div>
+        <div class="bg-white rounded-md border border-gray-100 p-6 shadow-md shadow-black/5">
+          <div class="flex justify-between mb-4">
+            <div>
+              <div class="flex items-center mb-1">
+                <div class="text-2xl font-semibold">324</div>
+                <div class="p-1 rounded bg-emerald-500/10 text-emerald-500 text-[12px] font-semibold leading-none ml-2">
+                  +30%</div>
+              </div>
+              <div class="text-sm font-medium text-gray-400">Visitors</div>
+            </div>
+            <div class="dropdown">
+              <button type="button" class="dropdown-toggle text-gray-400 hover:text-gray-600"><i
+                  class="ri-more-fill"></i></button>
+              <ul
+                class="dropdown-menu shadow-md shadow-black/5 z-30 hidden py-1.5 rounded-md bg-white border border-gray-100 w-full max-w-[140px]">
+                <li>
+                  <a href="#"
+                    class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50">Profile</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50">Settings</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <img src="https://placehold.co/32x32" alt="" class="w-8 h-8 rounded-full object-cover block">
+            <img src="https://placehold.co/32x32" alt="" class="w-8 h-8 rounded-full object-cover block -ml-3">
+            <img src="https://placehold.co/32x32" alt="" class="w-8 h-8 rounded-full object-cover block -ml-3">
+            <img src="https://placehold.co/32x32" alt="" class="w-8 h-8 rounded-full object-cover block -ml-3">
+            <img src="https://placehold.co/32x32" alt="" class="w-8 h-8 rounded-full object-cover block -ml-3">
+          </div>
+        </div>
+        <div class="bg-white rounded-md border border-gray-100 p-6 shadow-md shadow-black/5">
+          <div class="flex justify-between mb-6">
+            <div>
+              <div class="text-2xl font-semibold mb-1"><span
+                  class="text-base font-normal text-gray-400 align-top">&dollar;</span>2,345</div>
+              <div class="text-sm font-medium text-gray-400">Active orders</div>
+            </div>
+            <div class="dropdown">
+              <button type="button" class="dropdown-toggle text-gray-400 hover:text-gray-600"><i
+                  class="ri-more-fill"></i></button>
+              <ul
+                class="dropdown-menu shadow-md shadow-black/5 z-30 hidden py-1.5 rounded-md bg-white border border-gray-100 w-full max-w-[140px]">
+                <li>
+                  <a href="#"
+                    class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50">Profile</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50">Settings</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <a href="#" class="text-blue-500 font-medium text-sm hover:text-blue-600">View details</a>
+        </div>
+      </div>
+    </div> -->
+
+
+  </main>
+  <!-- end: Main -->
+  <script src="./main.js"></script>
+
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 </body>
 
 </html>
