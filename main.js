@@ -131,27 +131,33 @@ async function buildApp() {
       "p-2",
       "rounded-lg",
       "w-[100px]",
-      "text-center"
+      "text-center",
+      "mt-2"
     );
-    newNoteEdit.classList.add("ri-edit-2-line");
+    newNoteEdit.classList.add(
+      "ri-edit-2-line",
+      "absolute",
+      "bottom-3",
+      "right-3"
+    );
     newNoteDelete.classList.add(
       "ri-delete-bin-line",
       "absolute",
       "top-3",
-      "right-3",
+      "right-3"
     );
 
     newNoteElement.classList.add(
       "border",
       "border-gray-100",
-      "p-2",
+      "p-4",
       "bg-white",
       "shadow-md",
       "rounded-md",
       "shadow-black/20",
       "grid",
       "grid-cols-1",
-      "relative"
+      "relative",
     );
 
     newNoteElement.append(

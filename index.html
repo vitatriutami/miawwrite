@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
   <title>Dashboard</title>
 </head>
 
@@ -85,8 +88,9 @@
     <div class="p-14">
       <!-- SUB CONTENT -->
 
-      <section class="">
-        <h1 class="text-xl text-orange-500 font-medium mb-5">Memorable Note. Keep your memory by writing it here</h1>
+      <section class="p-4">
+        <h1 class="text-xl text-orange-500 font-medium mb-5 font-barriecito">Memorable Note. Keep your memory by writing
+          it here</h1>
         <form id="form" class="space-y-2 mb-6 w-[300px]" action="">
           <input name="title" placeholder="Title" class="border p-2 rounded-lg block w-full" type="text" />
           <textarea name="content" placeholder="Your note" class="border p-2 rounded-lg block w-full"></textarea>
@@ -94,11 +98,12 @@
           <button class="bg-indigo-500 texxt-white font-medium p-2 rounded-lg">Make a note</button>
         </form>
       </section>
-      <section class="p-4 border border-transparent rounded-lg">
-        <div class="flex flex-col ">
+      <section class="p-4 bg-gray-100 rounded-lg border border-gray-100">
+        <h1 class="mx-4 py-4 text-4xl text-slate-600 font-bold tracking-tighter">MY NOTES</h1>
+        <div class="mx-4 flex flex-col ">
           <div class="flex justify-between items-center">
             <div class="flex gap-2">
-              <h1 class="border border-transparent hover:border-blue-300 hover:bg-blue-300 px-3 py-2 rounded-md">All
+              <h1 class="border border-transparent border-blue-300 bg-blue-300 px-3 py-2 rounded-md">All
               </h1>
               <h1 class="border border-transparent hover:border-blue-300 hover:bg-blue-300 px-3 py-2 rounded-md">Project
               </h1>
