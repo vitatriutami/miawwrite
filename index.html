@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
-  <title>Dashboard</title>
+  <title>Miawwrite | Note Taking App</title>
 </head>
 
 <body class="text-gray-800 font-inter">
@@ -17,7 +17,7 @@
   <!-- start: Sidebar -->
   <div class="fixed left-0 top-0 w-64 h-full bg-gray-900 p-4 z-50 sidebar-menu transition-transform">
     <a href="#" class="flex items-center pb-4 border-b border-b-gray-800">
-      <img src="./logo-main.png" class="w-57 h-13" alt="">
+      <img src="./public/logo-main.png" class="w-57 h-13" alt="">
     </a>
     <ul class="mt-4">
       <li class="mb-1 group active">
@@ -77,7 +77,7 @@
       </ul>
       <ul class="ml-auto flex items-center">
         <li class="mr-1 dropdown">
-          <input id="searchInput" placeholder="Search Notes"
+          <input id="searchInput" placeholder="Search"
             class="text-sm border border-black-300 p-3 rounded-full w-[250px]" />
         </li>
       </ul>
@@ -85,36 +85,54 @@
 
     <!-- CONTENT -->
 
-    <div class="p-14">
+    <div class="p-14 space-y-4">
       <!-- SUB CONTENT -->
-
-      <section class="p-4">
-        <h1 class="text-xl text-orange-500 font-medium mb-5 font-barriecito">Memorable Note. Keep your memory by writing
-          it here</h1>
-        <form id="form" class="space-y-2 mb-6 w-[300px]" action="">
+      <section class="p-4 flex flex-col space-2">
+        <div class="mb-5 flex gap-2 items-center">
+          <img class="w-12 h-8" src="./public//cat-logo.png" alt="">
+          <h1 class="text-xl text-slate-800 font-medium">A Memorable Note Taking App. Keep your memory
+            by writing
+            it here!</h1>
+        </div>
+        <form id="form"
+          class="p-5 text-right space-y-2 mb-6 ml-6 w-[300px] rounded-lg border border-red-100 bg-gray-200 shadow-md shadow-yellow-500/50"
+          action="">
           <input name="title" placeholder="Title" class="border p-2 rounded-lg block w-full" type="text" />
           <textarea name="content" placeholder="Your note" class="border p-2 rounded-lg block w-full"></textarea>
           <input name="date" type="date" class="border p-2 rounded-lg block w-full" />
-          <button class="bg-indigo-500 texxt-white font-medium p-2 rounded-lg">Make a note</button>
+          <button class="bg-slate-800 hover:bg-red-700 text-white font-medium p-2 rounded-lg">Make a note</button>
         </form>
       </section>
       <section class="p-4 bg-gray-100 rounded-lg border border-gray-100">
         <h1 class="mx-4 py-4 text-4xl text-slate-600 font-bold tracking-tighter">MY NOTES</h1>
         <div class="mx-4 flex flex-col ">
           <div class="flex justify-between items-center">
-            <div class="flex gap-2">
-              <h1 class="border border-transparent border-blue-300 bg-blue-300 px-3 py-2 rounded-md">All
-              </h1>
-              <h1 class="border border-transparent hover:border-blue-300 hover:bg-blue-300 px-3 py-2 rounded-md">Project
-              </h1>
-              <h1 class="border border-transparent hover:border-blue-300 hover:bg-blue-300 px-3 py-2 rounded-md">
-                Business
-              </h1>
-              <h1 class="border border-transparent hover:border-blue-300 hover:bg-blue-300 px-3 py-2 rounded-md">
-                Personal
-              </h1>
+            <div class="flex gap-2 items-center">
+              <button>
+                <h1 class="border border-transparent border-red-300 bg-red-300 px-3 py-2 rounded-md">All
+                </h1>
+              </button>
+              <button>
+                <h1 class="border border-transparent hover:border-red-300 hover:bg-red-300 px-3 py-2 rounded-md">Project
+                </h1>
+              </button>
+              <button>
+                <h1 class="border border-transparent hover:border-red-300 hover:bg-red-300 px-3 py-2 rounded-md">
+                  Business
+                </h1>
+              </button>
+              <button>
+                <h1 class="border border-transparent hover:border-red-300 hover:bg-red-300 px-3 py-2 rounded-md">
+                  Personal
+                </h1>
+              </button>
+              <button
+                class="flex gap-1 border border-transparent hover:border-yellow-200 hover:bg-yellow-200 px-3 py-2 rounded-md">
+                <i class="ri-add-circle-line text-slate-800">
+                </i>
+                <h1 class="text-sm">Add Category</h1>
+              </button>
             </div>
-            <button class="bg-blue-200 py-3 px-5 rounded text-gray-600 shadow-md">Add a new note</button>
           </div>
         </div>
         <div id="noteCard" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6 p-8"></div>

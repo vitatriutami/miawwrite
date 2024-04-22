@@ -122,17 +122,18 @@ async function buildApp() {
     newNoteEdit.href = `editNote.html?id=${note._id}`;
     newNoteDelete.href = `editNote.html?id=${note._id}`;
 
-    newNoteTitleElement.classList.add("text-xl", "font-bold");
-    newNoteContentElement.classList.add("text-blue-300");
-    newNoteDateElement.classList.add("text-red-300", "text-sm", "mt-4");
+    newNoteTitleElement.classList.add("text-xl", "font-bold", "text-red-600");
+    newNoteContentElement.classList.add("text-slate-800");
+    newNoteDateElement.classList.add("text-gray-500", "text-sm", "mt-4");
     newNoteBtn.classList.add(
-      "bg-indigo-500",
-      "text-white",
-      "p-2",
+      "bg-yellow-200",
+      "text-slate-800",
+      "p-1",
       "rounded-lg",
       "w-[100px]",
       "text-center",
-      "mt-2"
+      "mt-2",
+      "shadow-md",
     );
     newNoteEdit.classList.add(
       "ri-edit-2-line",
