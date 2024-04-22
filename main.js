@@ -136,7 +136,8 @@ async function buildApp() {
       "ri-edit-2-line",
       "absolute",
       "bottom-3",
-      "right-3"
+      "right-3",
+      "text-indigo-800"
     );
 
     // DELETE
@@ -145,13 +146,19 @@ async function buildApp() {
       "ri-delete-bin-line",
       "absolute",
       "top-3",
-      "right-3"
+      "right-3",
+      "text-indigo-800"
     );
     newNoteDelete.addEventListener("click", async () => {
       await deleteNote(note._id);
     });
 
-    newNoteTitleElement.classList.add("text-xl", "font-bold", "text-red-600", "mt-5");
+    newNoteTitleElement.classList.add(
+      "text-xl",
+      "font-bold",
+      "text-red-600",
+      "mt-5"
+    );
     newNoteContentElement.classList.add("text-slate-800");
     newNoteDateElement.classList.add("text-gray-500", "text-sm", "mt-4");
     newNoteBtn.classList.add(
@@ -161,8 +168,9 @@ async function buildApp() {
       "rounded-lg",
       "w-[100px]",
       "text-center",
-      "mt-2",
-      "shadow-md"
+      "shadow-md",
+      "hover:bg-slate-800",
+      "hover:text-white"
     );
 
     newNoteElement.classList.add(
