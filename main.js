@@ -151,7 +151,7 @@ async function buildApp() {
       await deleteNote(note._id);
     });
 
-    newNoteTitleElement.classList.add("text-xl", "font-bold", "text-red-600");
+    newNoteTitleElement.classList.add("text-xl", "font-bold", "text-red-600", "mt-5");
     newNoteContentElement.classList.add("text-slate-800");
     newNoteDateElement.classList.add("text-gray-500", "text-sm", "mt-4");
     newNoteBtn.classList.add(
