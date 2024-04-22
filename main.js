@@ -95,6 +95,17 @@ async function createData(title, content, date) {
   return data;
 }
 
+async function deleteNote(id) {
+  await fetch(API_ENDPOINT, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify([id]),
+  });
+  location.reload();
+}
+
 // --- SHOW ALL DATA ----
 async function getAllData() {
   const res = await fetch(API_ENDPOINT);
@@ -111,16 +122,34 @@ async function buildApp() {
     const newNoteContentElement = document.createElement("p");
     const newNoteDateElement = document.createElement("p");
     const newNoteBtn = document.createElement("a");
-    const newNoteEdit = document.createElement("a");
-    const newNoteDelete = document.createElement("a");
 
     newNoteTitleElement.textContent = note.title;
     newNoteContentElement.textContent = note.content;
     newNoteDateElement.textContent = note.date;
     newNoteBtn.textContent = "See note";
     newNoteBtn.href = `note.html?id=${note._id}`;
+
+    // EDIT
+    const newNoteEdit = document.createElement("a");
     newNoteEdit.href = `editNote.html?id=${note._id}`;
-    newNoteDelete.href = `editNote.html?id=${note._id}`;
+    newNoteEdit.classList.add(
+      "ri-edit-2-line",
+      "absolute",
+      "bottom-3",
+      "right-3"
+    );
+
+    // DELETE
+    const newNoteDelete = document.createElement("button");
+    newNoteDelete.classList.add(
+      "ri-delete-bin-line",
+      "absolute",
+      "top-3",
+      "right-3"
+    );
+    newNoteDelete.addEventListener("click", async () => {
+      await deleteNote(note._id);
+    });
 
     newNoteTitleElement.classList.add("text-xl", "font-bold", "text-red-600");
     newNoteContentElement.classList.add("text-slate-800");
@@ -133,19 +162,7 @@ async function buildApp() {
       "w-[100px]",
       "text-center",
       "mt-2",
-      "shadow-md",
-    );
-    newNoteEdit.classList.add(
-      "ri-edit-2-line",
-      "absolute",
-      "bottom-3",
-      "right-3"
-    );
-    newNoteDelete.classList.add(
-      "ri-delete-bin-line",
-      "absolute",
-      "top-3",
-      "right-3"
+      "shadow-md"
     );
 
     newNoteElement.classList.add(
@@ -158,7 +175,7 @@ async function buildApp() {
       "shadow-black/20",
       "grid",
       "grid-cols-1",
-      "relative",
+      "relative"
     );
 
     newNoteElement.append(

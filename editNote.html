@@ -8,7 +8,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
   <title>Miawwrite | Note Taking App</title>
 </head>
 
@@ -104,10 +103,10 @@
           <form id="form"
             class="p-5 text-right space-y-2 mb-6 w-[700px] mx-auto rounded-lg border border-red-100 bg-gray-200 shadow-md shadow-yellow-500/50"
             action="">
-            <input name="title" placeholder="Title" class="border p-2 rounded-lg block w-full"
-              type="text" />
-            <textarea name="content" placeholder="Your note" class="border p-2 rounded-lg block w-full"></textarea>
-            <input name="date" type="date" class="border p-2 rounded-lg block w-full" />
+            <input id="title" name="title" placeholder="Title" class="border p-2 rounded-lg block w-full" type="text" />
+            <textarea id="content" name="content" placeholder="Your note"
+              class="border p-2 rounded-lg block w-full"></textarea>
+            <input id="date" name="date" type="date" class="border p-2 rounded-lg block w-full" />
             <div>
               <button class="bg-slate-800 text-white font-medium p-2 rounded-lg">Update</button>
             </div>
@@ -117,7 +116,7 @@
     </div>
   </main>
   <!-- end: Main -->
-  <script src="./singleNote.js"></script>
+  <script src="./editNote.js"></script>
   <script src="https://unpkg.com/@popperjs/core@2"></script>
 </body>
 
