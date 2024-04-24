@@ -66,6 +66,8 @@ const form = document.getElementById("form");
 //   });
 // });
 
+
+// --- CREATE ---
 form.addEventListener("submit", async (event) => {
   // avoid default behavior
   event.preventDefault();
@@ -95,6 +97,8 @@ async function createData(title, content, date) {
   return data;
 }
 
+
+// --- DELETE ---
 async function deleteNote(id) {
   await fetch(API_ENDPOINT, {
     method: "DELETE",

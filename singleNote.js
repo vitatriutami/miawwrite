@@ -6,19 +6,42 @@ const query = location.search;
 const params = new URLSearchParams(query);
 const id = params.get("id");
 
+// GET ENDPOINT
 const API_ENDPOINT = `https://v1.appbackend.io/v1/rows/768NKI6qq7pq/${id}`;
+const API_ENDPOINT_MAIN = `https://v1.appbackend.io/v1/rows/768NKI6qq7pq`;
 
-// editBtn.href = `editNote.html?id=${note._id}`;
-// deleteBtn.addEventListener("click", async () => {
-//   await deleteNote(note._id);
-// });
+// UPDATE
+editBtn.addEventListener("click", () => {
+  location.href = `editNote.html?id=${id}`;
+});
 
+// DELETE
 async function getNote() {
   const res = await fetch(API_ENDPOINT);
   const data = await res.json();
   return data;
 }
 
+// -- send to API main --
+async function deleteNote(id) {
+  await fetch(API_ENDPOINT_MAIN, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify([id]),
+  });
+  location.replace(`/index.html`);
+}
+
+// -- when clicked the note is deleted --
+deleteBtn.addEventListener("click", async () => {
+  const note = await getNote();
+  await deleteNote(note._id);
+});
+
+// CREATE
+// ---- BUILD APP ----
 async function buildApp() {
   const note = await getNote();
   const title = document.createElement("h2");
